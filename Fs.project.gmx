@@ -53,6 +53,8 @@
           <sprite>sprites\sp_plato_dedos_BB</sprite>
           <sprite>sprites\sp_papas_G_plato_BB</sprite>
         </sprites>
+        <sprite>sprites\sp_libreta_BB</sprite>
+        <sprite>sprites\sp_icono_libreta_BB</sprite>
       </sprites>
       <sprite>sprites\sp_interfaz_maquinas_BB</sprite>
       <sprite>sprites\sp_fondo_BB</sprite>
@@ -99,6 +101,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\preparacion.gml</script>
+  </scripts>
   <objects name="objects">
     <objects name="granja">
       <object>objects\jugador_granja</object>

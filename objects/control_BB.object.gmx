@@ -28,6 +28,7 @@
             <string>boton=0
 aux[0]=0
 aux[1]=0
+orden=0
 
 inventario[0,0]=0
 inventario[1,0]=0
@@ -39,6 +40,42 @@ inventario[2,1]=""
 inventario[3,1]=""
 
 dibujar_inventario=1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if ob_freidora.bloquear==0 &amp;&amp; 
+ob_plancha_BB.bloquear==0 &amp;&amp; 
+ob_frigo_BB.bloquear==0 &amp;&amp; 
+ob_helado_BB.bloquear==0 &amp;&amp;
+ob_alacena_BB.bloquear==0 &amp;&amp;
+ob_bote_basura_BB.bloquear==0 &amp;&amp; orden==0
+{
+orden=1
+
+
+}
+else
+orden=0
 </string>
           </argument>
         </arguments>
@@ -143,6 +180,10 @@ inventario[3,1]=""
 if boton==1
 draw_sprite_ext( sp_boton_rojo, aux[1],
  view_xview[0]+560, view_yview[0]+420+120,.5,.5,0,c_white,1)
+
+ if ob_jugador_BB.bloqueo==0
+draw_sprite_ext(sp_icono_libreta_BB, 0,
+ view_xview[0]+560+40, view_yview[0]+420+30,1.3,1.3,0,c_white,1) 
  
 if dibujar_inventario==1 
  {
@@ -159,6 +200,10 @@ view_yview[0]+420+27+20,.89,.89,0,c_white,1)
 draw_sprite_ext(inventario[3,0], 0, view_xview[0]+3+144+111+111+111,
 view_yview[0]+420+27+20,.89,.89,0,c_white,1)
  
+}
+if orden
+{
+draw_sprite(sp_libreta_BB,0, view_xview[0]+512, view_yview[0]+576/2)
 }
  
  
@@ -181,6 +226,35 @@ view_yview[0]+420+27+20,.89,.89,0,c_white,1)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ob_freidora.bloquear==0 &amp;&amp; 
+ob_plancha_BB.bloquear==0 &amp;&amp; 
+ob_frigo_BB.bloquear==0 &amp;&amp; 
+ob_helado_BB.bloquear==0 &amp;&amp;
+ob_alacena_BB.bloquear==0 &amp;&amp;
+ob_bote_basura_BB.bloquear==0
+alarm[0]=2
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
