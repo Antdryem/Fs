@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Señor Pago</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </head>
+
+    <body style="">
+        <div>
+            <div class="container-fluid">
+                <h1>Señor Pago</h1>
+                <hr />
+                <div id="contactForm" ><input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.awebsite.com" /><input class="form-control" type="hidden" name="subject" value="Awebsite.com Contact Form" /><input class="form-control" type="hidden"
+                                                                                                                                                                                                        name="to" value="email@awebsite.com" />
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div id="successfail"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6" id="message">
+                            <h2 class="h4"> Gasolineras
+                            </h2>
+
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Razón social</th>
+                                            <th scope="col">Dirección</th>
+                                            <th scope="col">Código Postal</th>
+                                            <!--th scope="col">Longitud</th>
+                                            <th scope="col">Latitud</th-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form-group">
+                                <label for="filtro_estado">Estado</label>
+                                <select class="form-control" id="filtro_estado" onchange="cambiar_municipios($(this).val());">
+                                    <option value=0 selected>Sin filtro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="filtro_municipio">Municipio</label>
+                                <select class="form-control" id="filtro_municipio">
+                                    <option value=0 selected>Sin filtro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="filtro_cp">Código Postal (Tiene prioridad en busqueda)</label>
+                                <input class="form-control" type="text" id="filtro_cp">
+
+                                <label for="tamano">Tamaño de consulta</label>
+                                <input class="form-control" type="number" id="tamano" min="1" placeholder="Una gran consulta podría afectar al rendimiento">
+                                <br>
+
+                                <label for="paginacion">Página  <input id="pagina_actual" class="" type="number" id="paginacion" value="1"> de </label> <a id="paginas_totales"> </a>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col text-center"><button class="btn btn-primary btn-block" style="max-width: 200px;" type="submit" onclick="cargar_gasolineras();">Filtrar <i class="fa fa-chevron-circle-right"></i></button></div>
+                                </div>
+                            </div>
+                            <hr class="d-flex d-md-none" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h2 class="h4"><i class="fa fa-location-arrow"></i> Mapa</h2>
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <div class="static-map">
+                                        <!--iframe id="mapita" allowfullscreen frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Mexico&zoom=4&key=AIzaSyBZNxQ74JJ1u1tzwwS1j3Gh6bi4H8UjnwE" width="100%" height="400">
+                                        </iframe-->
+                                        <div id="map">
+
+                                        </div> 
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-12 col-lg-6">
+                                    <h2 class="h4"><i class="fa fa-user"></i> Información</h2>
+                                    <div><span><strong>Página hecha por:</strong></span></div>
+                                    <div><span>Yáñez Antón Emilio Andrés</span></div>
+                                    <hr class="d-sm-none d-md-block d-lg-none" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNxQ74JJ1u1tzwwS1j3Gh6bi4H8UjnwE&callback=initMap"
+                                        async defer></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
+        <script src="assets/js/datos_gasolineras.js"></script>
+    </body>
+
+</html>
